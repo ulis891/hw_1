@@ -1,7 +1,8 @@
 from telegram import Update, Bot
 from telegram.ext import Updater, CommandHandler
+from tools import get_from_env
 
-TOKEN = '**********:***********************************'
+TOKEN = get_from_env('TELEGRAM_BOT_TOKEN')
 bot = Bot(token=TOKEN)
 updater = Updater(token=TOKEN, use_context=True)
 dispatcher = updater.dispatcher
